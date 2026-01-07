@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Query Intelligence Tool</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="stylesheet" href="popup.css" />
+  </head>
+  <body>
+    <div id="app" class="popup">
+      <header class="popup-header">
+        <h1 class="popup-title">Query Intelligence Tool</h1>
+        <p class="popup-subtitle">Rules-only query intelligence layer</p>
+      </header>
+
+      <main class="popup-main">
+        <label class="field-label" for="seed-input">Seed query</label>
+        <textarea
+          id="seed-input"
+          class="field-input"
+          rows="2"
+          placeholder="اكتب الكلمة المفتاحية أو الجملة اللي عايز تبني عليها البحث"
+        ></textarea>
+
+        <div class="field-group">
+          <label class="field-label" for="ai-provider">AI Service (اختياري)</label>
+          <select id="ai-provider" class="field-select">
+            <option value="none">بدون AI (Rules فقط)</option>
+            <option value="perplexity">Perplexity</option>
+            <option value="openai">GPT</option>
+            <option value="gemini">Gemini</option>
+            <option value="claude">Claude</option>
+          </select>
+        </div>
+
+        <div class="actions">
+          <button id="generate-btn" class="btn btn-primary">Generate Queries</button>
+          <button id="copy-btn" class="btn">Copy All</button>
+          <button id="csv-btn" class="btn">Download CSV</button>
+        </div>
+
+        <div class="tabs" id="tabs">
+          <button class="tab active" data-tab="all">All</button>
+          <button class="tab" data-tab="google">Google</button>
+          <button class="tab" data-tab="company">Company</button>
+          <button class="tab" data-tab="price">Price</button>
+          <button class="tab" data-tab="daily">Daily</button>
+          <button class="tab" data-tab="location">Location</button>
+        </div>
+
+        <section id="results" class="results"></section>
+      </main>
+
+      <footer class="popup-footer">
+        <span class="footer-text">Phase 1 · Rules-only · Local-first</span>
+      </footer>
+    </div>
+
+    <script src="popup.js"></script>
+  </body>
+</html>
